@@ -176,12 +176,9 @@
         shrunkSize = YES;
     }
     
-    if (shrunkSize)
-    {
-        CGSize labelSize = CGSizeMake(clampf(size.width - _horizontalPadding * 2, 0, originalLabelSize.width),
-                                      clampf(size.height - _verticalPadding * 2, 0, originalLabelSize.height));
-        _label.dimensions = labelSize;
-    }
+    CGSize labelSize = CGSizeMake(clampf(size.width - _horizontalPadding * 2, 0, size.width - _horizontalPadding * 2),
+                                      clampf(size.height - _verticalPadding * 2, 0, size.height - _verticalPadding * 2));
+    _label.dimensions = labelSize;
     
     _background.contentSize = size;
     _background.anchorPoint = ccp(0.5f,0.5f);
