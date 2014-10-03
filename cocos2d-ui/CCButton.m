@@ -349,7 +349,8 @@
 }
 
 - (void)setColor:(CCColor *)color {
-    [self setLabelColor:color forState:CCControlStateNormal];
+    //[self setLabelColor:color forState:CCControlStateNormal];
+    [super setColor:color];
 }
 
 - (void) setLabelColor:(CCColor*)color forState:(CCControlState)state
@@ -449,8 +450,6 @@
 {
     return @[@"fontName",
             @"fontSize",
-            @"opacity",
-            @"color",
             @"fontColor",
             @"outlineColor",
             @"outlineWidth",
