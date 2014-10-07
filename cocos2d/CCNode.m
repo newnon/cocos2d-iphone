@@ -1607,6 +1607,18 @@ CGAffineTransformMakeRigid(CGPoint translate, CGFloat radians)
 @synthesize cascadeColorEnabled=_cascadeColorEnabled;
 @synthesize cascadeOpacityEnabled=_cascadeOpacityEnabled;
 
+-(void) setCascadeColorEnabled:(BOOL) value
+{
+    _cascadeColorEnabled = value;
+    [self setColor: self.color];
+}
+
+-(void) setCascadeOpacityEnabled:(BOOL) value
+{
+    _cascadeOpacityEnabled = value;
+    [self setOpacity:self.opacity];
+}
+
 -(CGFloat) opacity
 {
 	return _color.a;
