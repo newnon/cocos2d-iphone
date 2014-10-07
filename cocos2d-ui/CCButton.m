@@ -99,6 +99,9 @@
     
     if (!title) title = @"";
     
+    self.cascadeColorEnabled = true;
+    self.cascadeOpacityEnabled = true;
+    
     // Setup holders for properties
     _backgroundColors = [NSMutableDictionary dictionary];
     _backgroundOpacities = [NSMutableDictionary dictionary];
@@ -277,16 +280,24 @@
 - (void) updatePropertiesForState:(CCControlState)state
 {
     // Update background
-    _background.color = [self backgroundColorForState:state];
-    _background.opacity = [self backgroundOpacityForState:state];
+    ccColor4F backgroundColor = [self backgroundColorForState:state].ccColor4f;
+    backgroundColor.r *= _displayColor.r;
+    backgroundColor.g *= _displayColor.g;
+    backgroundColor.b *= _displayColor.b;
+    _background.color = [CCColor colorWithCcColor4f:backgroundColor];
+    _background.opacity = [self backgroundOpacityForState:state] * _displayColor.a;
     
     CCSpriteFrame* spriteFrame = [self backgroundSpriteFrameForState:state];
     if (!spriteFrame) spriteFrame = [self backgroundSpriteFrameForState:CCControlStateNormal];
     _background.spriteFrame = spriteFrame;
     
     // Update label
-    _label.color = [self labelColorForState:state];
-    _label.opacity = [self labelOpacityForState:state];
+    ccColor4F labelColor = [self labelColorForState:state].ccColor4f;
+    labelColor.r *= _displayColor.r;
+    labelColor.g *= _displayColor.g;
+    labelColor.b *= _displayColor.b;
+    _label.color = [CCColor colorWithCcColor4f:labelColor];;
+    _label.opacity = [self labelOpacityForState:state] * _displayColor.a;
     
     [self needsLayout];
 }
@@ -348,6 +359,23 @@
 - (float) hitAreaExpansion
 {
     return _originalHitAreaExpansion;
+}
+
+// Used internally to recurse through children, thus the parameter is not a CCColor*
+- (void)updateDisplayedColor:(ccColor4F) parentColor
+{
+    _displayColor.r = _color.r * parentColor.r;
+    _displayColor.g = _color.g * parentColor.g;
+    _displayColor.b = _color.b * parentColor.b;
+    
+    [self stateChanged];
+}
+
+- (void)updateDisplayedOpacity:(CGFloat)parentOpacity
+{
+    _displayColor.a = _color.a * parentOpacity;
+    
+    [self stateChanged];
 }
 
 - (void)setColor:(CCColor *)color {
