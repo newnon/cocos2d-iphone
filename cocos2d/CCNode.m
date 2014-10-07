@@ -1627,16 +1627,78 @@ CGAffineTransformMakeRigid(CGPoint translate, CGFloat radians)
 @synthesize cascadeColorEnabled=_cascadeColorEnabled;
 @synthesize cascadeOpacityEnabled=_cascadeOpacityEnabled;
 
+-(void) updateCascadeColor
+{
+    ccColor4F parentColor = [CCColor whiteColor].ccColor4f;
+    if (_parent && _parent->_cascadeColorEnabled)
+    {
+        parentColor = _parent.displayedColor.ccColor4f;
+    }
+    
+    [self updateDisplayedColor:parentColor];
+}
+
+-(void) disableCascadeColor
+{
+    for (CCNode* item in _children) {
+        [item updateDisplayedColor:[CCColor whiteColor].ccColor4f];
+    }
+}
+
+-(void) updateCascadeOpacity
+{
+    CGFloat parentOpacity = 1.0;
+    if (_parent && _parent->_cascadeOpacityEnabled)
+    {
+        parentOpacity = _parent.displayedColor.ccColor4f.a;
+    }
+    
+    [self updateDisplayedOpacity:parentOpacity];
+}
+
+-(void) disableCascadeOpacity
+{
+    for (CCNode* item in _children) {
+        [item updateDisplayedOpacity:1.0f];
+    }
+}
+
 -(void) setCascadeColorEnabled:(BOOL) value
 {
+    if (_cascadeColorEnabled == value)
+    {
+        return;
+    }
+    
     _cascadeColorEnabled = value;
-    [self setColor: self.color];
+    
+    if (_cascadeColorEnabled)
+    {
+        [self updateCascadeColor];
+    }
+    else
+    {
+        [self disableCascadeColor];
+    }
 }
 
 -(void) setCascadeOpacityEnabled:(BOOL) value
 {
+    if (_cascadeOpacityEnabled == value)
+    {
+        return;
+    }
+    
     _cascadeOpacityEnabled = value;
-    [self setOpacity:self.opacity];
+    
+    if (_cascadeOpacityEnabled)
+    {
+        [self updateCascadeOpacity];
+    }
+    else
+    {
+        [self disableCascadeOpacity];
+    }
 }
 
 -(CGFloat) opacity
@@ -1652,7 +1714,7 @@ CGAffineTransformMakeRigid(CGPoint translate, CGFloat radians)
 - (void) setOpacity:(CGFloat)opacity
 {
 	_displayColor.a = _color.a = opacity;
-	[self cascadeOpacityIfNeeded];
+	[self updateCascadeOpacity];
 }
 
 -(CCColor*) color
@@ -1673,7 +1735,7 @@ CGAffineTransformMakeRigid(CGPoint translate, CGFloat radians)
 	_displayColor = _color = color.ccColor4f;
 	_displayColor.a = _color.a = alpha;
 	
-	[self cascadeColorIfNeeded];
+	[self updateCascadeColor];
 }
 
 -(CCColor*) colorRGBA
@@ -1686,19 +1748,8 @@ CGAffineTransformMakeRigid(CGPoint translate, CGFloat radians)
 	// apply the new alpha too.
 	_displayColor = _color = color.ccColor4f;
 	
-	[self cascadeColorIfNeeded];
-	[self cascadeOpacityIfNeeded];
-}
-
-
-- (void) cascadeColorIfNeeded
-{
-	if( _cascadeColorEnabled ) {
-		CCColor* parentColor = [CCColor whiteColor];
-		if( _parent.isCascadeColorEnabled )
-			parentColor = [_parent displayedColor];
-		[self updateDisplayedColor:parentColor.ccColor4f];
-	}
+    [self updateCascadeColor];
+    [self updateCascadeOpacity];
 }
 
 // Used internally to recurse through children, thus the parameter is not a CCColor*
@@ -1708,20 +1759,10 @@ CGAffineTransformMakeRigid(CGPoint translate, CGFloat radians)
 	_displayColor.g = _color.g * parentColor.g;
 	_displayColor.b = _color.b * parentColor.b;
 	
-	// if (_cascadeColorEnabled) {
+	if (_cascadeColorEnabled) {
 		for (CCNode* item in _children) {
 			[item updateDisplayedColor:_displayColor];
 		}
-	// }
-}
-
-- (void) cascadeOpacityIfNeeded
-{
-	if( _cascadeOpacityEnabled ) {
-		GLfloat parentOpacity = 1.0f;
-		if( [_parent isCascadeOpacityEnabled] )
-			parentOpacity = [_parent displayedOpacity];
-		[self updateDisplayedOpacity:parentOpacity];
 	}
 }
 
@@ -1729,11 +1770,11 @@ CGAffineTransformMakeRigid(CGPoint translate, CGFloat radians)
 {
 	_displayColor.a = _color.a * parentOpacity;
 	
-	// if (_cascadeOpacityEnabled) {
+	 if (_cascadeOpacityEnabled) {
 		for (CCNode* item in _children) {
 			[item updateDisplayedOpacity:_displayColor.a];
 		}
-	// }
+	}
 }
 
 -(void) setOpacityModifyRGB:(BOOL)boolean{
