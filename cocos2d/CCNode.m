@@ -1732,8 +1732,10 @@ CGAffineTransformMakeRigid(CGPoint translate, CGFloat radians)
 {
 	// Retain old alpha.
 	float alpha = _color.a;
+    float displayAlpha = _displayColor.a;
 	_displayColor = _color = color.ccColor4f;
-	_displayColor.a = _color.a = alpha;
+	_color.a = alpha;
+    _displayColor.a = displayAlpha;
 	
 	[self updateCascadeColor];
 }
