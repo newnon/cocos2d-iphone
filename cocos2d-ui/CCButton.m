@@ -137,7 +137,7 @@
     
     // Setup label
     _label = [CCLabelTTF labelWithString:title fontName:@"Helvetica" fontSize:14];
-    _label.adjustsFontSizeToFit = YES;
+    _label.adjustsFontSizeToFit = NO;
     _label.horizontalAlignment = CCTextAlignmentCenter;
     _label.verticalAlignment = CCVerticalTextAlignmentCenter;
     
@@ -191,7 +191,7 @@
     _label.positionType = CCPositionTypeNormalized;
     _label.position = ccp(0.5f, 0.5f);
     
-    self.contentSize = [self convertContentSizeFromPoints: size type:self.contentSizeType];
+    [super setContentSize:[self convertContentSizeFromPoints: size type:self.contentSizeType]];
     
     [super layout];
 }
