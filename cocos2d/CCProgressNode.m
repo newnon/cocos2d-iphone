@@ -148,24 +148,16 @@
 
 -(void)setColor:(CCColor*)c
 {
+    [super setColor:c];
 	_sprite.color = c;
 	[self updateColor];
 }
 
--(CCColor*)color
-{
-	return _sprite.color;
-}
-
 -(void)setOpacity:(CGFloat)o
 {
+    [super setOpacity:o];
 	_sprite.opacity = o;
 	[self updateColor];
-}
-
--(CGFloat)opacity
-{
-	return _sprite.opacity;
 }
 
 #pragma mark ProgressTimer Internal
