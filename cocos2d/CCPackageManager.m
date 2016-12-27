@@ -1,7 +1,7 @@
 #import "CCPackageManager.h"
 #import "CCPackage.h"
 #import "CCPackageDownloadManager.h"
-#import "CCPackageUnzipper.h"
+
 #import "CCPackageInstaller.h"
 #import "CCPackageManagerDelegate.h"
 #import "CCPackageConstants.h"
@@ -75,44 +75,14 @@
 
     [self resumePausedDownloads];
 
-    [self restartUnzippingTasks];
+   
 
     CCLOGINFO(@"[PACKAGES] Packages loaded (%lu): %@", _packages.count, _packages);
 
     self.initialized = YES;
 }
 
-- (void)restartUnzippingTasks
-{
-    for (CCPackage *aPackage in _packages)
-    {
-        CCPackageUnzipper *unzipper = [self unzipperForPackage:aPackage];
-        if (unzipper)
-        {
-            continue;
-        }
 
-        if (aPackage.status == CCPackageStatusDownloaded
-            || aPackage.status == CCPackageStatusUnzipped
-            || aPackage.status == CCPackageStatusUnzipping)
-        {
-            [self unzipPackage:aPackage];
-        }
-    }
-}
-
-- (CCPackageUnzipper *)unzipperForPackage:(CCPackage *)aPackage
-{
-    for (CCPackageUnzipper *packageUnzipper in _unzipTasks)
-    {
-        if (packageUnzipper.package == aPackage)
-        {
-            return packageUnzipper;
-        }
-    }
-
-    return nil;
-}
 
 - (void)resumePausedDownloads
 {
@@ -359,56 +329,6 @@
 }
 
 
-#pragma mark - CCPackageUnzipperDelegate
-
-- (void)unzipFinished:(CCPackageUnzipper *)packageUnzipper
-{
-    [self runOnCocosThread:^
-    {
-        [self removeDownloadFile:packageUnzipper.package];
-
-        [_unzipTasks removeObject:packageUnzipper];
-
-        [packageUnzipper.package setValue:@(CCPackageStatusUnzipped) forKey:@"status"];
-
-        if ([_delegate respondsToSelector:@selector(packageUnzippingFinished:)])
-        {
-            [_delegate packageUnzippingFinished:packageUnzipper.package];
-        }
-
-        [self savePackagesForceWriteToDefaults:NO];
-
-        if (![self installPackage:packageUnzipper.package])
-        {
-            return;
-        }
-
-        [self tidyUpAfterInstallation:packageUnzipper.package];
-    }];
-}
-
-- (void)unzipFailed:(CCPackageUnzipper *)packageUnzipper error:(NSError *)error
-{
-    [self runOnCocosThread:^
-    {
-        [_unzipTasks removeObject:packageUnzipper];
-
-        [_delegate packageUnzippingFailed:packageUnzipper.package error:error];
-
-        [self savePackagesForceWriteToDefaults:NO];
-    }];
-}
-
-- (void)unzipProgress:(CCPackageUnzipper *)packageUnzipper unzippedBytes:(NSUInteger)unzippedBytes totalBytes:(NSUInteger)totalBytes
-{
-    [self runOnCocosThread:^
-    {
-        if ([_delegate respondsToSelector:@selector(packageUnzippingProgress:unzippedBytes:totalBytes:)])
-        {
-            [_delegate packageUnzippingProgress:packageUnzipper.package unzippedBytes:unzippedBytes totalBytes:totalBytes];
-        }
-    }];
-}
 
 
 #pragma mark - Flow
@@ -434,17 +354,7 @@
     // Note: This is done on purpose in case a zip contains more than the expected root package folder or something completely different which can lead to a mess
     // The content is checked later on after unzipping finishes
     package.unzipURL = [NSURL fileURLWithPath:[[NSTemporaryDirectory() stringByAppendingPathComponent:PACKAGE_REL_UNZIP_FOLDER] stringByAppendingPathComponent:[package standardIdentifier]]];
-    CCPackageUnzipper *packageUnzipper = [[CCPackageUnzipper alloc] initWithPackage:package];
 
-    [_unzipTasks addObject:packageUnzipper];
-
-    if ([_delegate respondsToSelector:@selector(passwordForPackageZipFile:)])
-    {
-        packageUnzipper.password = [_delegate passwordForPackageZipFile:package];
-    }
-
-    packageUnzipper.delegate = self;
-    [packageUnzipper unpackPackageOnQueue:_unzippingQueue];
 }
 
 - (void)removeDownloadFile:(CCPackage *)package

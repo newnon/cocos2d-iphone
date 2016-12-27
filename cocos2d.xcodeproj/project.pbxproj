@@ -193,8 +193,6 @@
 		7A5946CF19E372F600F65F90 /* CCPackageDownloadDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A87219C8ACC1000A3BCA /* CCPackageDownloadDelegate.h */; };
 		7A5946D019E372F600F65F90 /* CCPackageDownloadManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A87319C8ACC1000A3BCA /* CCPackageDownloadManager.h */; };
 		7A5946D219E372F600F65F90 /* CCPackageDownloadManagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A87519C8ACC1000A3BCA /* CCPackageDownloadManagerDelegate.h */; };
-		7A5946D319E372F600F65F90 /* CCPackageUnzipper.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A86A19C8ACAF000A3BCA /* CCPackageUnzipper.h */; };
-		7A5946D519E372F600F65F90 /* CCPackageUnzipperDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A86C19C8ACAF000A3BCA /* CCPackageUnzipperDelegate.h */; };
 		7A5946D619E372F700F65F90 /* CCPackageCocos2dEnabler.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A87E19C8ACDC000A3BCA /* CCPackageCocos2dEnabler.h */; };
 		7A5946D819E372F700F65F90 /* CCPackageInstaller.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A88219C8ACDC000A3BCA /* CCPackageInstaller.h */; };
 		7A5946DA19E372F700F65F90 /* CCPackageHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = E525FF8C7C018BF691F36044 /* CCPackageHelper.h */; };
@@ -351,7 +349,6 @@
 		7A59481319E375A500F65F90 /* CCPackageConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A85D19C8ACA0000A3BCA /* CCPackageConstants.m */; };
 		7A59481919E375A600F65F90 /* CCPackageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A87119C8ACC1000A3BCA /* CCPackageDownload.m */; };
 		7A59481C19E375A600F65F90 /* CCPackageDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A87419C8ACC1000A3BCA /* CCPackageDownloadManager.m */; };
-		7A59481F19E375A600F65F90 /* CCPackageUnzipper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A86B19C8ACAF000A3BCA /* CCPackageUnzipper.m */; };
 		7A59482219E375A700F65F90 /* CCPackageCocos2dEnabler.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A87F19C8ACDC000A3BCA /* CCPackageCocos2dEnabler.m */; };
 		7A59482419E375A700F65F90 /* CCPackageInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A88319C8ACDC000A3BCA /* CCPackageInstaller.m */; };
 		7A59482619E375A700F65F90 /* CCPackageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F9EA4B5DD37D0418869E /* CCPackageHelper.m */; };
@@ -421,8 +418,6 @@
 		7A5948D319E375BE00F65F90 /* CCSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EE6A1D181AE34600B983FE /* CCSlider.m */; };
 		7A59493F19E380D700F65F90 /* libObjectiveChipmunk-Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A59492C19E379B600F65F90 /* libObjectiveChipmunk-Mac.a */; };
 		7A59494019E3810500F65F90 /* CCPlatformTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 571CD01F19649E03003D460C /* CCPlatformTextField.m */; };
-		7A59498319E38C9800F65F90 /* libSSZipArchiveMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A59498219E38C8300F65F90 /* libSSZipArchiveMac.a */; };
-		83409E4919D5BADC004B7EB9 /* libSSZipArchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83409E3619D5B791004B7EB9 /* libSSZipArchive.a */; };
 		839CE58619FFB139003369F0 /* CCEffectInvert.h in Headers */ = {isa = PBXBuildFile; fileRef = 839CE58419FFB139003369F0 /* CCEffectInvert.h */; };
 		839CE58719FFB139003369F0 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 839CE58519FFB139003369F0 /* CCEffectInvert.m */; };
 		839CE58B19FFB146003369F0 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 839CE58519FFB139003369F0 /* CCEffectInvert.m */; };
@@ -434,9 +429,6 @@
 		83E1A86719C8ACA0000A3BCA /* CCPackageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A85F19C8ACA0000A3BCA /* CCPackageManager.m */; };
 		83E1A86819C8ACA0000A3BCA /* CCPackageManagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A86019C8ACA0000A3BCA /* CCPackageManagerDelegate.h */; };
 		83E1A86919C8ACA0000A3BCA /* CCPackageTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A86119C8ACA0000A3BCA /* CCPackageTypes.h */; };
-		83E1A86D19C8ACAF000A3BCA /* CCPackageUnzipper.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A86A19C8ACAF000A3BCA /* CCPackageUnzipper.h */; };
-		83E1A86E19C8ACAF000A3BCA /* CCPackageUnzipper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A86B19C8ACAF000A3BCA /* CCPackageUnzipper.m */; };
-		83E1A86F19C8ACAF000A3BCA /* CCPackageUnzipperDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A86C19C8ACAF000A3BCA /* CCPackageUnzipperDelegate.h */; };
 		83E1A87619C8ACC1000A3BCA /* CCPackageDownload.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A87019C8ACC1000A3BCA /* CCPackageDownload.h */; };
 		83E1A87719C8ACC1000A3BCA /* CCPackageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A87119C8ACC1000A3BCA /* CCPackageDownload.m */; };
 		83E1A87919C8ACC1000A3BCA /* CCPackageDownloadManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A87319C8ACC1000A3BCA /* CCPackageDownloadManager.h */; };
@@ -703,34 +695,6 @@
 			remoteGlobalIDString = D369B4CF19C8E73C00BA46EA;
 			remoteInfo = "ObjectAL (Mac)";
 		};
-		7A59497E19E38C8300F65F90 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83409E2A19D5B791004B7EB9 /* SSZipArchive.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7A59495A19E38BE500F65F90;
-			remoteInfo = SSZipArchiveMac;
-		};
-		7A59498119E38C8300F65F90 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83409E2A19D5B791004B7EB9 /* SSZipArchive.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A59495B19E38BE500F65F90;
-			remoteInfo = SSZipArchiveMac;
-		};
-		83409E3519D5B791004B7EB9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83409E2A19D5B791004B7EB9 /* SSZipArchive.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 83409DCE19D5B65B004B7EB9;
-			remoteInfo = SSZipArchive;
-		};
-		83409E4C19D5E8A1004B7EB9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83409E2A19D5B791004B7EB9 /* SSZipArchive.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 83409DCD19D5B65B004B7EB9;
-			remoteInfo = SSZipArchive;
-		};
 		B759E52C1880C66900E8166C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B759E5281880C66900E8166C /* Chipmunk7-ios.xcodeproj */;
@@ -880,7 +844,6 @@
 		7A4037C319E3711D007B6E8F /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework; sourceTree = DEVELOPER_DIR; };
 		7A4037C519E37126007B6E8F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		7A4037C719E3712A007B6E8F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
-		83409E2A19D5B791004B7EB9 /* SSZipArchive.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSZipArchive.xcodeproj; path = external/SSZipArchive/SSZipArchive.xcodeproj; sourceTree = "<group>"; };
 		839CE58419FFB139003369F0 /* CCEffectInvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEffectInvert.h; sourceTree = "<group>"; };
 		839CE58519FFB139003369F0 /* CCEffectInvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEffectInvert.m; sourceTree = "<group>"; };
 		83E1A85A19C8ACA0000A3BCA /* CCPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPackage.h; sourceTree = "<group>"; };
@@ -891,9 +854,6 @@
 		83E1A85F19C8ACA0000A3BCA /* CCPackageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPackageManager.m; sourceTree = "<group>"; };
 		83E1A86019C8ACA0000A3BCA /* CCPackageManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPackageManagerDelegate.h; sourceTree = "<group>"; };
 		83E1A86119C8ACA0000A3BCA /* CCPackageTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPackageTypes.h; sourceTree = "<group>"; };
-		83E1A86A19C8ACAF000A3BCA /* CCPackageUnzipper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPackageUnzipper.h; sourceTree = "<group>"; };
-		83E1A86B19C8ACAF000A3BCA /* CCPackageUnzipper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPackageUnzipper.m; sourceTree = "<group>"; };
-		83E1A86C19C8ACAF000A3BCA /* CCPackageUnzipperDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPackageUnzipperDelegate.h; sourceTree = "<group>"; };
 		83E1A87019C8ACC1000A3BCA /* CCPackageDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPackageDownload.h; sourceTree = "<group>"; };
 		83E1A87119C8ACC1000A3BCA /* CCPackageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPackageDownload.m; sourceTree = "<group>"; };
 		83E1A87219C8ACC1000A3BCA /* CCPackageDownloadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPackageDownloadDelegate.h; sourceTree = "<group>"; };
@@ -1146,7 +1106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83409E4919D5BADC004B7EB9 /* libSSZipArchive.a in Frameworks */,
 				FC64014019C79716003E595A /* libObjectAL.a in Frameworks */,
 				D3903B1A19952ABD003AA81A /* Metal.framework in Frameworks */,
 				D24FAEEC198014B90043E27D /* GLKit.framework in Frameworks */,
@@ -1167,7 +1126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A59498319E38C9800F65F90 /* libSSZipArchiveMac.a in Frameworks */,
 				7A59493F19E380D700F65F90 /* libObjectiveChipmunk-Mac.a in Frameworks */,
 				7A4037C819E3712A007B6E8F /* OpenGL.framework in Frameworks */,
 				7A4037C619E37126007B6E8F /* QuartzCore.framework in Frameworks */,
@@ -1241,7 +1199,6 @@
 		501756090F335CE900624901 /* external */ = {
 			isa = PBXGroup;
 			children = (
-				83409E2A19D5B791004B7EB9 /* SSZipArchive.xcodeproj */,
 				FC39961319C3B92F00C93E5E /* ObjectAL.xcodeproj */,
 				B759E5281880C66900E8166C /* Chipmunk7-ios.xcodeproj */,
 			);
@@ -1567,15 +1524,6 @@
 			path = cocos2d;
 			sourceTree = "<group>";
 		};
-		83409E2B19D5B791004B7EB9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				83409E3619D5B791004B7EB9 /* libSSZipArchive.a */,
-				7A59498219E38C8300F65F90 /* libSSZipArchiveMac.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		83E1A85619C8AC2A000A3BCA /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -1588,7 +1536,6 @@
 				83E1A86019C8ACA0000A3BCA /* CCPackageManagerDelegate.h */,
 				83E1A86119C8ACA0000A3BCA /* CCPackageTypes.h */,
 				83E1A85719C8AC56000A3BCA /* Download */,
-				83E1A85919C8AC6A000A3BCA /* Unzip */,
 				83E1A85819C8AC65000A3BCA /* Install */,
 				E525FF8C7C018BF691F36044 /* CCPackageHelper.h */,
 				E525F9EA4B5DD37D0418869E /* CCPackageHelper.m */,
@@ -1620,16 +1567,6 @@
 				83E1A88319C8ACDC000A3BCA /* CCPackageInstaller.m */,
 			);
 			name = Install;
-			sourceTree = "<group>";
-		};
-		83E1A85919C8AC6A000A3BCA /* Unzip */ = {
-			isa = PBXGroup;
-			children = (
-				83E1A86A19C8ACAF000A3BCA /* CCPackageUnzipper.h */,
-				83E1A86B19C8ACAF000A3BCA /* CCPackageUnzipper.m */,
-				83E1A86C19C8ACAF000A3BCA /* CCPackageUnzipperDelegate.h */,
-			);
-			name = Unzip;
 			sourceTree = "<group>";
 		};
 		A0D7D9D415E2E737000CA0C4 /* Physics */ = {
@@ -2049,7 +1986,6 @@
 				E0C54DCB11F9CF2700B9E4CB /* ccUtils.h in Headers */,
 				D23C5CBC194BC500007CA669 /* CCTouchAndroid.h in Headers */,
 				E01E6D8C121F130E001A484F /* CCLabelBMFont.h in Headers */,
-				83E1A86D19C8ACAF000A3BCA /* CCPackageUnzipper.h in Headers */,
 				D2DDB09519805E8400233D80 /* CCMatrix3.h in Headers */,
 				E0EAD0FF121F4B4600B0C81C /* CCDirectorIOS.h in Headers */,
 				83E1A86219C8ACA0000A3BCA /* CCPackage.h in Headers */,
@@ -2083,7 +2019,6 @@
 				A0C87D1A14F9A3A100C0E8B2 /* NSThread+performBlock.h in Headers */,
 				D3903B14199528B6003AA81A /* CCMetalView.h in Headers */,
 				B791E84A182064BF00DAE1D7 /* CCTiledMapLayer_Private.h in Headers */,
-				83E1A86F19C8ACAF000A3BCA /* CCPackageUnzipperDelegate.h in Headers */,
 				83E1A86919C8ACA0000A3BCA /* CCPackageTypes.h in Headers */,
 				D27451C619B111A9006DA0A1 /* CCEffectDFOutline.h in Headers */,
 				A6DC4E0918055DCC00C280A6 /* CCTransition.h in Headers */,
@@ -2215,8 +2150,6 @@
 				7A5946CF19E372F600F65F90 /* CCPackageDownloadDelegate.h in Headers */,
 				7A5946D019E372F600F65F90 /* CCPackageDownloadManager.h in Headers */,
 				7A5946D219E372F600F65F90 /* CCPackageDownloadManagerDelegate.h in Headers */,
-				7A5946D319E372F600F65F90 /* CCPackageUnzipper.h in Headers */,
-				7A5946D519E372F600F65F90 /* CCPackageUnzipperDelegate.h in Headers */,
 				7A5946D619E372F700F65F90 /* CCPackageCocos2dEnabler.h in Headers */,
 				7A5946D819E372F700F65F90 /* CCPackageInstaller.h in Headers */,
 				7A5946DA19E372F700F65F90 /* CCPackageHelper.h in Headers */,
@@ -2331,7 +2264,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				83409E4D19D5E8A1004B7EB9 /* PBXTargetDependency */,
 				FCFDA23E19C78E2D00B90910 /* PBXTargetDependency */,
 				B759E5321880C70A00E8166C /* PBXTargetDependency */,
 			);
@@ -2351,7 +2283,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				7A59497F19E38C8300F65F90 /* PBXTargetDependency */,
 				7A59492E19E37A2300F65F90 /* PBXTargetDependency */,
 				7A59492919E379B600F65F90 /* PBXTargetDependency */,
 			);
@@ -2396,10 +2327,6 @@
 					ProductGroup = FC39961419C3B92F00C93E5E /* Products */;
 					ProjectRef = FC39961319C3B92F00C93E5E /* ObjectAL.xcodeproj */;
 				},
-				{
-					ProductGroup = 83409E2B19D5B791004B7EB9 /* Products */;
-					ProjectRef = 83409E2A19D5B791004B7EB9 /* SSZipArchive.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -2423,20 +2350,6 @@
 			fileType = archive.ar;
 			path = "libObjectiveChipmunk-Mac.a";
 			remoteRef = 7A59492B19E379B600F65F90 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7A59498219E38C8300F65F90 /* libSSZipArchiveMac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSSZipArchiveMac.a;
-			remoteRef = 7A59498119E38C8300F65F90 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		83409E3619D5B791004B7EB9 /* libSSZipArchive.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSSZipArchive.a;
-			remoteRef = 83409E3519D5B791004B7EB9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		B759E52D1880C66900E8166C /* libObjectiveChipmunk-iPhone.a */ = {
@@ -2497,7 +2410,6 @@
 				D268FE10198078FF00ECBCD0 /* CCEffectGlass.m in Sources */,
 				5018F2740DFDEAFF00C013A5 /* CCLabelTTF.m in Sources */,
 				9D856722191B019900573093 /* CCEffectContrast.m in Sources */,
-				83E1A86E19C8ACAF000A3BCA /* CCPackageUnzipper.m in Sources */,
 				5018F2760DFDEAFF00C013A5 /* CCNodeColor.m in Sources */,
 				5018F2780DFDEAFF00C013A5 /* CCScene.m in Sources */,
 				5018F27E0DFDEAFF00C013A5 /* CCTextureCache.m in Sources */,
@@ -2690,7 +2602,6 @@
 				7A59481319E375A500F65F90 /* CCPackageConstants.m in Sources */,
 				7A59481919E375A600F65F90 /* CCPackageDownload.m in Sources */,
 				7A59481C19E375A600F65F90 /* CCPackageDownloadManager.m in Sources */,
-				7A59481F19E375A600F65F90 /* CCPackageUnzipper.m in Sources */,
 				7A59482219E375A700F65F90 /* CCPackageCocos2dEnabler.m in Sources */,
 				7A59482419E375A700F65F90 /* CCPackageInstaller.m in Sources */,
 				7A59482619E375A700F65F90 /* CCPackageHelper.m in Sources */,
@@ -2775,16 +2686,6 @@
 			isa = PBXTargetDependency;
 			name = "ObjectAL (Mac)";
 			targetProxy = 7A59492D19E37A2300F65F90 /* PBXContainerItemProxy */;
-		};
-		7A59497F19E38C8300F65F90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SSZipArchiveMac;
-			targetProxy = 7A59497E19E38C8300F65F90 /* PBXContainerItemProxy */;
-		};
-		83409E4D19D5E8A1004B7EB9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SSZipArchive;
-			targetProxy = 83409E4C19D5E8A1004B7EB9 /* PBXContainerItemProxy */;
 		};
 		B759E5321880C70A00E8166C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

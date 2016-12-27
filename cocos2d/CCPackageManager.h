@@ -1,12 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "CCPackageDownloadManagerDelegate.h"
-#import "CCPackageUnzipperDelegate.h"
+
 
 @class CCPackage;
 @protocol CCPackageManagerDelegate;
 
 
-@interface CCPackageManager : NSObject <CCPackageDownloadManagerDelegate, CCPackageUnzipperDelegate>
+@interface CCPackageManager : NSObject <CCPackageDownloadManagerDelegate>
 
 /**
  *  The path where all installed packages are stored. This path is relative to the caches folder which location is depending
