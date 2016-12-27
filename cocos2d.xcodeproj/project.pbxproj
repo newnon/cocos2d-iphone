@@ -682,13 +682,6 @@
 			remoteGlobalIDString = 7A40369519DE39C8007B6E8F;
 			remoteInfo = "ObjectiveChipmunk-iPhoneAndroid";
 		};
-		7A40378219E36EFF007B6E8F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83409E2A19D5B791004B7EB9 /* SSZipArchive.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A4036DE19DE3DF6007B6E8F;
-			remoteInfo = SSZipArchiveAndroid;
-		};
 		7A59492819E379B600F65F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B759E5281880C66900E8166C /* Chipmunk7-ios.xcodeproj */;
@@ -723,13 +716,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 7A59495B19E38BE500F65F90;
 			remoteInfo = SSZipArchiveMac;
-		};
-		83409E3119D5B791004B7EB9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83409E2A19D5B791004B7EB9 /* SSZipArchive.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 21CC41A517DB7D1300201DDC;
-			remoteInfo = SSZipArchiveExampleApp;
 		};
 		83409E3519D5B791004B7EB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -772,13 +758,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = CBBAB312171D0B84009B955F;
 			remoteInfo = "ObjectAL (iOS)";
-		};
-		FC39961E19C3B92F00C93E5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC39961319C3B92F00C93E5E /* ObjectAL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FC39961219C3B80E00C93E5E;
-			remoteInfo = "ObjectAL (Android)";
 		};
 		FCFDA23D19C78E2D00B90910 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1591,9 +1570,7 @@
 		83409E2B19D5B791004B7EB9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83409E3219D5B791004B7EB9 /* SSZipArchiveExampleApp.app */,
 				83409E3619D5B791004B7EB9 /* libSSZipArchive.a */,
-				7A40378319E36EFF007B6E8F /* libSSZipArchiveAndroid.a */,
 				7A59498219E38C8300F65F90 /* libSSZipArchiveMac.a */,
 			);
 			name = Products;
@@ -1958,7 +1935,6 @@
 			isa = PBXGroup;
 			children = (
 				FC39961B19C3B92F00C93E5E /* libObjectAL.a */,
-				FC39961F19C3B92F00C93E5E /* libObjectAL (Android).a */,
 				D28B2E7E19CBA89A00DC6E08 /* libObjectAL (Mac).a */,
 			);
 			name = Products;
@@ -2442,13 +2418,6 @@
 			remoteRef = 7A40377A19E36EFF007B6E8F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7A40378319E36EFF007B6E8F /* libSSZipArchiveAndroid.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSSZipArchiveAndroid.a;
-			remoteRef = 7A40378219E36EFF007B6E8F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		7A59492C19E379B600F65F90 /* libObjectiveChipmunk-Mac.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -2461,13 +2430,6 @@
 			fileType = archive.ar;
 			path = libSSZipArchiveMac.a;
 			remoteRef = 7A59498119E38C8300F65F90 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		83409E3219D5B791004B7EB9 /* SSZipArchiveExampleApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = SSZipArchiveExampleApp.app;
-			remoteRef = 83409E3119D5B791004B7EB9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		83409E3619D5B791004B7EB9 /* libSSZipArchive.a */ = {
@@ -2496,13 +2458,6 @@
 			fileType = archive.ar;
 			path = libObjectAL.a;
 			remoteRef = FC39961A19C3B92F00C93E5E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FC39961F19C3B92F00C93E5E /* libObjectAL (Android).a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libObjectAL (Android).a";
-			remoteRef = FC39961E19C3B92F00C93E5E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -3034,7 +2989,7 @@
 					"external/SSZipArchive/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
@@ -3089,7 +3044,7 @@
 					"external/SSZipArchive/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
