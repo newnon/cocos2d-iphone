@@ -1895,13 +1895,6 @@ SelectorNameForProperty(objc_property_t property)
 
 + (CCBReader*) reader
 {
-	// if available, create an instance of Sprite Kit Reader class instead
-	Class spriteKitReaderClass = NSClassFromString(@"CCBSpriteKitReader");
-	if (spriteKitReaderClass)
-	{
-		return [[spriteKitReaderClass alloc] init];
-	}
-	
     return [[CCBReader alloc] init];
 }
 
