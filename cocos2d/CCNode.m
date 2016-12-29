@@ -401,6 +401,9 @@ TransformPointAsVector(CGPoint p, CGAffineTransform t)
             // This is a position type affected by content size
             child->_isTransformDirty = _isInverseDirty = YES;
         }
+        if ([child respondsToSelector:@selector(needsLayout)]) {
+            [child performSelector:@selector(needsLayout)];
+        }
     }
 }
 
