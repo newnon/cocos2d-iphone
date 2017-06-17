@@ -434,6 +434,8 @@ void FNTConfigRemoveCache( void )
 #pragma mark -
 #pragma mark CCLabelBMFont
 
+
+
 @implementation CCLabelBMFont {
     
 	// The text displayed by the label.
@@ -466,6 +468,7 @@ void FNTConfigRemoveCache( void )
 }
 
 @synthesize alignment = _alignment;
+@dynamic opacity,color;
 
 #pragma mark LabelBMFont - Purge Cache
 +(void) purgeCachedData

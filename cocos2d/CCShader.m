@@ -26,12 +26,12 @@
 //	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-#import "CCShader_private.h"
+#import "CCShader_Private.h"
 #import "ccMacros.h"
 #import "Support/CCFileUtils.h"
 #import "Support/uthash.h"
 #import "CCRenderer_Private.h"
-#import "CCTexture_private.h"
+#import "CCTexture_Private.h"
 #import "CCDirector.h"
 #import "CCCache.h"
 #import "CCGL.h"

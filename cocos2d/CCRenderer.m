@@ -28,7 +28,7 @@
 #import "CCRenderer_Private.h"
 #import "CCCache.h"
 #import "CCTexture_Private.h"
-#import "CCShader_private.h"
+#import "CCShader_Private.h"
 #import "CCDirector_Private.h"
 #import "CCRenderDispatch.h"
 
