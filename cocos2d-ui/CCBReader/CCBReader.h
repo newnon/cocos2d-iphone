@@ -25,11 +25,9 @@
 
 #import <Foundation/Foundation.h>
 
-#if CCB_SPRITEKIT_READER
-#import "CCBSpriteKitCompatibility.h"
-#else
+
 #import "cocos2d.h"
-#endif
+
 
 
 /**

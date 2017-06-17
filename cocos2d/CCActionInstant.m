@@ -30,7 +30,7 @@
 #import "CCNode.h"
 #import "CCSprite.h"
 #import <objc/message.h>
-#import "OALSimpleAudio.h"
+//#import "OALSimpleAudio.h"
 
 //
 // InstantAction
@@ -387,7 +387,7 @@
 - (void)update:(CCTime)time
 {
 #if __CC_PLATFORM_IOS || __CC_PLATFORM_MAC
-    [[OALSimpleAudio sharedInstance] playEffect:_soundFile volume:_gain pitch:_pitch pan:_pan loop:NO];
+ //   [[OALSimpleAudio sharedInstance] playEffect:_soundFile volume:_gain pitch:_pitch pan:_pan loop:NO];
 #endif
 }
 
