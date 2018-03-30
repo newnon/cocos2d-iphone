@@ -58,11 +58,12 @@ NSString * const CCBlendEquationAlpha = @"CCBlendEquationAlpha";
 {
 	CCBlendMode *blendMode = [self rawObjectForKey:options];
 	if(blendMode) return blendMode;
-	
+	//NSDictionary
 	// Normalize the blending mode to use for the key.
-	id src = (options[CCBlendFuncSrcColor] ?: @(GL_ONE));
-	id dst = (options[CCBlendFuncDstColor] ?: @(GL_ZERO));
-	id equation = (options[CCBlendEquationColor] ?: @(GL_FUNC_ADD));
+    NSDictionary<NSCopying> *_options = (NSDictionary<NSCopying> *)options;
+	id src = (_options[CCBlendFuncSrcColor] ?: @(GL_ONE));
+	id dst = (_options[CCBlendFuncDstColor] ?: @(GL_ZERO));
+	id equation = (_options[CCBlendEquationColor] ?: @(GL_FUNC_ADD));
 	
 	NSDictionary *normalized = @{
 		CCBlendFuncSrcColor: src,
@@ -70,9 +71,9 @@ NSString * const CCBlendEquationAlpha = @"CCBlendEquationAlpha";
 		CCBlendEquationColor: equation,
 		
 		// Assume they meant non-separate blending if they didn't fill in the keys.
-		CCBlendFuncSrcAlpha: (options[CCBlendFuncSrcAlpha] ?: src),
-		CCBlendFuncDstAlpha: (options[CCBlendFuncDstAlpha] ?: dst),
-		CCBlendEquationAlpha: (options[CCBlendEquationAlpha] ?: equation),
+		CCBlendFuncSrcAlpha: (_options[CCBlendFuncSrcAlpha] ?: src),
+		CCBlendFuncDstAlpha: (_options[CCBlendFuncDstAlpha] ?: dst),
+		CCBlendEquationAlpha: (_options[CCBlendEquationAlpha] ?: equation),
 	};
 	
 	// Create the key using the normalized blending mode.
