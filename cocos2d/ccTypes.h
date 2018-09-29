@@ -41,19 +41,6 @@
 #import <GLKit/GLKMath.h>
 #endif
 
-#if __CC_PLATFORM_ANDROID
-#import "CCMathTypesAndroid.h"
-
-#import "CCMatrix3.h"
-#import "CCMatrix4.h"
-#import "CCVector2.h"
-#import "CCVector3.h"
-#import "CCVector4.h"
-#import "CCQuaternion.h"
-
-#import "CCMathUtilsAndroid.h"
-#endif 
-
 #import "Platforms/CCGL.h"
 
 /** RGB color composed of bytes 3 bytes
